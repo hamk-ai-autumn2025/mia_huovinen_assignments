@@ -4,8 +4,8 @@ client = OpenAI()
 
 system_prompt = """
 You are a creative social media writer. 
-When given a topic, write engaging post about it. 
-Keep the post clear, fun, and easy to read. 
+When given a topic, write three, engaging posts about it. 
+Keep the posts clear, fun, and easy to read. 
 Use different ways to say the same thing so each post feels unique. 
 Add hashtags when it makes sense. 
 Always focus on the topic and write in the same language as the user.
@@ -16,7 +16,6 @@ temperature = 0.8
 top_p = 0.9
 presence_penalty = 1.2
 frequency_penalty = 0.5
-n = 3
 
 
 history = [{"role": "system", "content": system_prompt}]
@@ -37,12 +36,11 @@ while True:
         top_p=top_p,
         presence_penalty=presence_penalty,
         frequency_penalty=frequency_penalty,
-        n=3
     )
 
     print("\nCreative writer answers:\n")
 
     for i, choice in enumerate(completion.choices, start=1):
-        print(f"Versio {i}:\n{choice.message.content}\n")
+        print(f"{choice.message.content}\n")
 
    
