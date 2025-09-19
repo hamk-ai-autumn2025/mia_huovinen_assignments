@@ -49,6 +49,7 @@ def image_to_text(base64_image):
 
     description = (response.json().get("choices")[0].get("message").get("content"))
     print(description)
+    return description
 
 
 def text_to_image(description):
@@ -103,3 +104,6 @@ def main():
     
     new_prompt = image_to_text(base64_image)
     text_to_image(new_prompt)
+
+if __name__ == "__main__":
+    main()
