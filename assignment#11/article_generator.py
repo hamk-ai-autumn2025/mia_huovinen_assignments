@@ -6,8 +6,8 @@ import os
 def create_pdf(markdown_content: str, output_filename: str = "article.pdf"):
     pdf = MarkdownPdf(toc_level=1)
     pdf.add_section(Section(markdown_content, paper_size="A4"), user_css="table, td, th {border: 1px solid black;}")
-    pdf.meta["title"] = "Finland"
-    pdf.meta["author"] = "Google Gemini"
+    pdf.meta["title"] = "Generated Article"
+    pdf.meta["author"] = "AI Article Generator"
     pdf.save(output_filename)
     
     print(f"PDF saved as {output_filename}")
